@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title></title>
+  <script type="text/javascript">
+    function stil(a, b) {
+      document.getElementById("yazi").style.color = a;
+      document.getElementById("yazi").style.backgroundColor = b;
+    }
+  </script>
+</head>
+
+<body>
+  <div style="background:rondomColor;
+                margin: 200px;
+              font-size: 30px;
+               text-align: center;">
+
+
+    <button id="b1" onclick="stil('yellow','red')">Galatasaray</button>
+    <button id="b2" onclick="stil('white','black')">Beşiktaş</button>
+    <button id="b3" onclick="stil('yellow','navy')">Fenerbahçe</button>
+    <br></br>
+
+    <span id="yazi">
+      <script>
+        let n = 5;
+        let string = "";
+
+        for (let i = 1; i <= n; i++) {
+
+          for (let k = 0; k < i * 2 - 1; k++) {
+            let color = Math.floor(Math.random()*4096).toString(16)
+            string += `<span style="color:#${color}">*</span>`;
+          }
+          string += "<br>";
+
+        }
+        for (let i = 1; i <= n - 1; i++) {
+
+          for (let k = (n - i) * 2 - 1; k > 0; k--) {
+            let color = Math.floor(Math.random()*4096).toString(16)
+            string += `<span style="color:#${color}">*</span>`;
+          }
+          string += "<br>";
+        }
+
+        document.write(string);
+      </script>
+    </span>
+  </div>
+
+</body>
+
+</html>
